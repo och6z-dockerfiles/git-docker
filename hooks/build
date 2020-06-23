@@ -6,6 +6,5 @@ docker build \
     --build-arg ACCOUNT=docker \
     --build-arg USERMAIL=usermail@usermail \
     --build-arg USER=user@user \
-    --build-arg PWLEN=15 \
     --file $DOCKERFILE_PATH \
     --tag $IMAGE_NAME .
