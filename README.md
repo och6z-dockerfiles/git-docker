@@ -6,6 +6,7 @@ docker build \
     --build-arg ACCOUNT=docker \
     --build-arg USERMAIL=usermail@usermail \
     --build-arg USER=user@user \
+    --build-arg PWLEN=15 \
     --file Dockerfile \
     --tag image-name:latest .
 ```
