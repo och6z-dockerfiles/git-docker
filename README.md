@@ -3,7 +3,7 @@
 docker build \
     --no-cache \
     --build-arg DEBIAN_VERSION=stable-slim \
-    --build-arg ACCOUNT=github \
+    --build-arg ACCOUNT=docker \
     --build-arg USERMAIL=usermail@usermail \
     --build-arg USER=user@user \
     --file Dockerfile \
