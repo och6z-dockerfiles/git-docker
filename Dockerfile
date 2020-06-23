@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     git \
-    #pwgen \
+    pwgen \
     openssh-client \
     && apt-get purge -y && apt-get autoremove -y && apt-get autoclean -y \
     && rm -rf /var/lib/apt/lists/*
