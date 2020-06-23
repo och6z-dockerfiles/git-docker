@@ -6,6 +6,7 @@ docker build \
     --build-arg ACCOUNT=docker \
     --build-arg USERMAIL=usermail@usermail \
     --build-arg USER=user@user \
+    --build-arg PWLEN=15 \
     --file Dockerfile \
     --tag image-name:latest .
 ```
@@ -18,5 +19,5 @@ docker run \
     --tty \
     --volume /tmp/.X11-unix:/tmp/.X11-unix \
     --env DISPLAY=unix$DISPLAY \
-    --name container-name och6z/git:1.1
+    --name container-name och6z/git:1.0
 ```
