@@ -6,20 +6,23 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-    #ca-certificates \
     git \
     pwgen \
     openssh-client \
     && apt-get purge -y && apt-get autoremove -y && apt-get autoclean -y \
     && rm -rf /var/lib/apt/lists/*
 
-ARG USER
+COPY config .
+
+ARG ACCOUNT
 ARG USERMAIL
+ARG USER
 ARG PWLEN
 
-RUN mkdir --parents /root/.ssh && touch /root/.ssh/passphrase_docker \
-    && pwgen -s ${PWLEN} -1 > /root/.ssh/passphrase_docker \
-    && ssh-keygen -t rsa -b 4096 -N $(cat /root/.ssh/passphrase_docker) -C "${USERMAIL}" -f /root/.ssh/id_rsa_docker \
+RUN mkdir --parents $HOME/.ssh && mv ./config $HOME/.ssh/ \
+    && touch $HOME/.ssh/passphrase_${ACCOUNT} \
+    && pwgen -s ${PWLEN} -1 > $HOME/.ssh/passphrase_${ACCOUNT} \
+    && ssh-keygen -t rsa -b 4096 -N $(cat $HOME/.ssh/passphrase_${ACCOUNT}) -C "${USERMAIL}" -f $HOME/.ssh/id_rsa_${ACCOUNT} \
     && git config --global user.name ${USER} \
     && git config --global user.email ${USERMAIL}
 
