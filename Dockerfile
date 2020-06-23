@@ -17,7 +17,6 @@ COPY config .
 ARG ACCOUNT
 ARG USERMAIL
 ARG USER
-#ARG PWLEN
 
 RUN mkdir --parents $HOME/.ssh && mv ./config $HOME/.ssh/ \
     && touch $HOME/.ssh/passphrase_${ACCOUNT} \
