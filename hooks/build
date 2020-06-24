@@ -2,8 +2,8 @@
 
 docker build \
     --no-cache \
-    --build-arg IMAGE=debian \
-    --build-arg IMAGE_VERSION=stable-slim \
+    --build-arg IMAGE=och6z/tor-proxy \
+    --build-arg IMAGE_VERSION=latest \
     --build-arg ACCOUNT=docker \
     --build-arg USERMAIL=usermail@usermail \
     --build-arg USER=user@user \
