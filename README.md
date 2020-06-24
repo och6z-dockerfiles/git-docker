@@ -18,5 +18,5 @@ docker run \
     --tty \
     --volume /tmp/.X11-unix:/tmp/.X11-unix \
     --env DISPLAY=unix$DISPLAY \
-    --name container-name och6z/git
+    --name container-name och6z/git:2.0
 ```
