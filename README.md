@@ -2,7 +2,8 @@
 ```bash
 docker build \
     --no-cache \
-    --build-arg DEBIAN_VERSION=stable-slim \
+    --build-arg IMAGE=debian \
+    --build-arg IMAGE_VERSION=stable-slim \
     --build-arg ACCOUNT=docker \
     --build-arg USERMAIL=usermail@usermail \
     --build-arg USER=user@user \
@@ -18,5 +19,5 @@ docker run \
     --tty \
     --volume /tmp/.X11-unix:/tmp/.X11-unix \
     --env DISPLAY=unix$DISPLAY \
-    --name container-name och6z/git:2.0
+    --name container-name och6z/git
 ```

@@ -1,8 +1,7 @@
-ARG DEBIAN_VERSION
+ARG IMAGE
+ARG IMAGE_VERSION
 
-FROM debian:${DEBIAN_VERSION}
-
-ENV DEBIAN_FRONTEND noninteractive
+FROM $IMAGE:${IMAGE_VERSION}
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
