@@ -2,8 +2,8 @@
 
 docker build \
     --no-cache \
-    --build-arg IMAGE=och6z/tor-proxy \
-    --build-arg IMAGE_VERSION=latest \
+    --build-arg IMAGE=python \
+    --build-arg IMAGE_VERSION=slim \
     --build-arg ACCOUNT=docker \
     --build-arg USERMAIL=usermail@usermail \
     --build-arg USER=user@user \
